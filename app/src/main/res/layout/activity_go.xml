@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#040303"
-    tools:context=".MainActivity">
-
+    tools:context=".Go">
     <Button
         android:id="@+id/button"
         android:layout_width="129dp"
@@ -26,4 +25,5 @@
         android:background="#3A3939"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

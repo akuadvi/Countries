@@ -1,4 +1,4 @@
-package com.example.countries;
+ package com.example.countries;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

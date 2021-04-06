@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Countries</string>
+    <string name="emailEdit">Email</string>
+    <string name="passwordEdit">Password</string>
+    <string name="loginButton">Login</string>
+    <string name="signUp">Create Account</string>
+    <string name="loginText">Login</string>
+    <string name="signOutText">Sign Out</string>
+    <string name="SignUPText">Sign Up</string>
+    <string name="nameEdit">Name</string>
+    <string name="confirmPasswordEdit">Confirm Password</string>
+    <string name="forgotPasswordText">Forgot Password</string>
+    <string name="resetPasswordText">To reset password, enter your email, press the button and check your email for further instructions</string>
+    <string name="resetPasswordBtn">Reset Password</string>
+    <string name="returnToLoginTextView">Return to Login Screen</string>
+    <string name="title_activity_main">Main</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

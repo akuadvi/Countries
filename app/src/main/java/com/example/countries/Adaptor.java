@@ -1,6 +1,7 @@
 package com.example.countries;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.PictureDrawable;
 import android.net.Uri;
 import android.util.Log;
@@ -46,13 +47,27 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         countries cont=c.get(position);
+        Intent myIntent = new Intent(con, country.class);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("simbu",cont.getName());
+                myIntent.putExtra("title",cont.getName());
+                myIntent.putExtra("capital",cont.getCapital()); myIntent.putExtra("region",cont.getRegion());
+                myIntent.putExtra("SubRegion",cont.getSubregion());
+                myIntent.putExtra("Population",cont.getPopulation().toString());
+                myIntent.putExtra("Borders",cont.getBorders().get(0).toString());
+                myIntent.putExtra("Languages",cont.getLanguages().get(0).getName().toString());
+                myIntent.putExtra("Flag",cont.getFlag());
+                con.startActivity(myIntent);
+
+
+
+            }
+        });
+
         holder.title.setText(cont.getName());
-        holder.capital.setText(cont.getCapital());
-        holder.region.setText(cont.getRegion());
-        holder.subregion.setText(cont.getSubregion());
-        holder.population.setText(cont.getPopulation().toString());
-        holder.boundaries.setText(cont.getBorders().get(0).toString());
-        holder.language.setText(cont.getLanguages().get(0).getName().toString());
+
 
 
         GenericRequestBuilder<Uri, InputStream, SVG, PictureDrawable> requestBuilder = Glide.with(con
@@ -88,12 +103,7 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.ViewHolder> {
 
             img=itemView.findViewById(R.id.imageView);
             title=itemView.findViewById(R.id.Name);
-            region=itemView.findViewById(R.id.region);
-            capital=itemView.findViewById(R.id.capital);
-            subregion=itemView.findViewById(R.id.subregion);
-            population=itemView.findViewById(R.id.population);
-            boundaries=itemView.findViewById(R.id.boundaries);
-            language=itemView.findViewById(R.id.languages);
+
 
 
 

@@ -15,10 +15,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class Go extends AppCompatActivity {
     Database db;
     RecyclerView recyclerView;
     Adaptor adaptor;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_go);
         but=findViewById(R.id.button);
         but.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView=findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        db=Room.databaseBuilder(getApplicationContext(),Database.class,"countries").allowMainThreadQueries().fallbackToDestructiveMigration().build();
+        db= Room.databaseBuilder(getApplicationContext(),Database.class,"countries").allowMainThreadQueries().fallbackToDestructiveMigration().build();
 
 
         final GetService apiService = RetrofitClient.getRetrofitInstance().create(GetService.class);
@@ -71,4 +69,6 @@ public class MainActivity extends AppCompatActivity {
         for(countries c:test)
             Log.i("akul",c.getFlag());
     }
+
+
 }
